@@ -1,3 +1,6 @@
+// Set the eslint configuration comment for ES6
+/* eslint-env es6 */
+
 const express = require('express');
 const mongoose = require('mongoose');
 const fs = require('fs');
