@@ -12,6 +12,7 @@ from .restapis import get_request, analyze_review_sentiments, post_review
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
+
 # Create your views here.
 # Create a `login_request` view to handle sign in request
 @csrf_exempt
@@ -30,12 +31,14 @@ def login_user(request):
         data = {"userName": username, "status": "Authenticated"}
     return JsonResponse(data)
 
+
 # Create a `logout_request` view to handle sign out request
 def logout_request(request):
     """Handle user logout"""
     logout(request)
     data = {"userName": ""}
     return JsonResponse(data)
+
 
 # Create a `registration` view to handle sign up request
 @csrf_exempt
@@ -79,6 +82,7 @@ def registration(request):
     }
     return JsonResponse(data)
 
+
 def get_cars(request):
     """Get a list of cars"""
     count = CarMake.objects.filter().count()
@@ -97,6 +101,7 @@ def get_cars(request):
         )
     return JsonResponse({"CarModels": cars})
 
+
 # Update the `get_dealerships` render list
 # of dealerships all by default
 # particular state if state is passed
@@ -110,6 +115,7 @@ def get_dealerships(request, state="All"):
     return JsonResponse(
         {"status": 200, "dealers": dealerships}
     )
+
 
 # Create a `get_dealer_reviews`
 # view to render the reviews of a dealer
@@ -126,6 +132,7 @@ def get_dealer_reviews(request, dealer_id):
         return JsonResponse({"status": 200, "reviews": reviews})
     return JsonResponse({"status": 400, "message": "Bad Request"})
 
+
 # Create a `get_dealer_details` view
 def get_dealer_details(request, dealer_id):
     """Get details of a dealer"""
@@ -134,6 +141,7 @@ def get_dealer_details(request, dealer_id):
         dealership = get_request(endpoint)
         return JsonResponse({"status": 200, "dealer": dealership})
     return JsonResponse({"status": 400, "message": "Bad Request"})
+
 
 # Create a `add_review` view to submit a review
 def add_review(request):
