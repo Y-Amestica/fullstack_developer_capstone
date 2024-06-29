@@ -22,7 +22,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/',
-         admin.site.urls),
+         admin.site.urls
+        ),
     path('djangoapp/',
          include('djangoapp.urls')
         ),
@@ -34,7 +35,7 @@ urlpatterns = [
          TemplateView.as_view(
              template_name="About.html")
         ),
-    path('contact/', 
+    path('contact/',
         TemplateView.as_view(
             template_name="Contact.html")
         ),
