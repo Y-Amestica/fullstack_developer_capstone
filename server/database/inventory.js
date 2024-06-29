@@ -1,3 +1,6 @@
+// Set the eslint configuration comment for ES6
+/* eslint-env es6 */
+
 const { Int32 } = require('mongodb');
 const mongoose = require('mongoose');
 
