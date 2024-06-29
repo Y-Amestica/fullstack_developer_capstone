@@ -1,5 +1,6 @@
 // Set the eslint configuration comment for ES6
 /* eslint-env es6 */
+/* jshint esversion: 6 */
 
 const mongoose = require('mongoose');
 
