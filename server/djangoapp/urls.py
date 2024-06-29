@@ -5,7 +5,7 @@ from django.conf import settings
 from . import views
 
 
-app_name='djangoapp'
+app_name = 'djangoapp'
 urlpatterns = [
     path(
         route='register',
@@ -22,7 +22,7 @@ urlpatterns = [
     path(
         route='get_cars',
         view=views.get_cars,
-        name ='getcars'),
+        name='getcars'),
     path(
         route='get_dealers',
         view=views.get_dealerships,
